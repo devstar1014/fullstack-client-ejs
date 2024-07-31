@@ -16,7 +16,6 @@
   "description": "Final Sprint for Fullstack JS - Used electronics search engine",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/GarrettSmithyNL/FinalSprint-FullStack/issues"
   },
-  "homepage": "https://github.com/GarrettSmithyNL/FinalSprint-FullStack#readme"
+  "homepage": "https://github.com/GarrettSmithyNL/FinalSprint-FullStack#readme",
+  "devDependencies": {}
 }
