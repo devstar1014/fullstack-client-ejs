@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S10",
+    "price": 299.99,
+    "description": "A powerful smartphone with a stunning display and advanced camera capabilities.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 2,
+    "name": "Apple MacBook Air 2017",
+    "price": 599.99,
+    "description": "Lightweight and portable laptop with a sleek design and reliable performance.",
+    "release_year": 2017,
+    "condition": "Very Good"
+  },
+  {
+    "id": 3,
+    "name": "Sony WH-1000XM3 Headphones",
+    "price": 199.99,
+    "description": "Noise-cancelling over-ear headphones with superior sound quality and comfort.",
+    "release_year": 2018,
+    "condition": "Excellent"
+  },
+  {
+    "id": 4,
+    "name": "Dell XPS 13",
+    "price": 899.99,
+    "description": "Compact and powerful ultrabook with a stunning display and long battery life.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 5,
+    "name": "Canon EOS Rebel T7i",
+    "price": 499.99,
+    "description": "A versatile DSLR camera with impressive image quality and user-friendly features.",
+    "release_year": 2017,
+    "condition": "Very Good"
+  },
+  {
+    "id": 6,
+    "name": "Apple iPad Pro 11-inch",
+    "price": 649.99,
+    "description": "High-performance tablet with a brilliant display and advanced features.",
+    "release_year": 2018,
+    "condition": "Excellent"
+  },
+  {
+    "id": 7,
+    "name": "Microsoft Surface Pro 6",
+    "price": 749.99,
+    "description": "2-in-1 detachable laptop with versatile functionality and strong performance.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 8,
+    "name": "Bose QuietComfort 35 II",
+    "price": 179.99,
+    "description": "Noise-cancelling wireless headphones with superior sound and comfort.",
+    "release_year": 2017,
+    "condition": "Very Good"
+  },
+  {
+    "id": 9,
+    "name": "Google Pixel 3",
+    "price": 299.99,
+    "description": "Smartphone with excellent camera quality and a clean Android experience.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 10,
+    "name": "Samsung Galaxy Tab S6",
+    "price": 499.99,
+    "description": "Powerful tablet with a stunning display and versatile S Pen functionality.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 11,
+    "name": "Apple Watch Series 4",
+    "price": 349.99,
+    "description": "Smartwatch with advanced health tracking features and a sleek design.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 12,
+    "name": "HP Spectre x360",
+    "price": 999.99,
+    "description": "Premium 2-in-1 laptop with a flexible design and powerful performance.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 13,
+    "name": "Sony Alpha a6000",
+    "price": 449.99,
+    "description": "Compact mirrorless camera with fast autofocus and excellent image quality.",
+    "release_year": 2014,
+    "condition": "Good"
+  },
+  {
+    "id": 14,
+    "name": "JBL Charge 4",
+    "price": 129.99,
+    "description": "Portable Bluetooth speaker with powerful sound and long battery life.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 15,
+    "name": "Apple iPhone XR",
+    "price": 399.99,
+    "description": "Smartphone with a vibrant display and advanced camera capabilities.",
+    "release_year": 2018,
+    "condition": "Excellent"
+  },
+  {
+    "id": 16,
+    "name": "Asus ROG Strix GL502VS",
+    "price": 1199.99,
+    "description": "High-performance gaming laptop with a powerful GPU and smooth display.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 17,
+    "name": "Amazon Kindle Oasis",
+    "price": 179.99,
+    "description": "E-reader with a high-resolution display and waterproof design.",
+    "release_year": 2017,
+    "condition": "Very Good"
+  },
+  {
+    "id": 18,
+    "name": "Fitbit Charge 3",
+    "price": 99.99,
+    "description": "Fitness tracker with heart rate monitoring and sleep tracking.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 19,
+    "name": "Nintendo Switch",
+    "price": 249.99,
+    "description": "Hybrid gaming console with versatile gameplay options and a wide game library.",
+    "release_year": 2017,
+    "condition": "Very Good"
+  },
+  {
+    "id": 20,
+    "name": "GoPro Hero 7 Black",
+    "price": 249.99,
+    "description": "Action camera with excellent video stabilization and rugged design.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 21,
+    "name": "Logitech MX Master 3",
+    "price": 79.99,
+    "description": "Ergonomic wireless mouse with advanced features and precision tracking.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 22,
+    "name": "Dyson V10 Absolute",
+    "price": 399.99,
+    "description": "Powerful cordless vacuum cleaner with advanced suction technology.",
+    "release_year": 2018,
+    "condition": "Excellent"
+  },
+  {
+    "id": 23,
+    "name": "Garmin Forerunner 235",
+    "price": 149.99,
+    "description": "GPS running watch with heart rate monitoring and smart notifications.",
+    "release_year": 2015,
+    "condition": "Good"
+  },
+  {
+    "id": 24,
+    "name": "Sony PlayStation 4 Pro",
+    "price": 349.99,
+    "description": "Enhanced gaming console with 4K capabilities and improved performance.",
+    "release_year": 2016,
+    "condition": "Very Good"
+  },
+  {
+    "id": 25,
+    "name": "LG C9 OLED TV",
+    "price": 1499.99,
+    "description": "4K OLED TV with stunning picture quality and smart TV features.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 26,
+    "name": "DJI Mavic Air",
+    "price": 599.99,
+    "description": "Compact drone with high-quality camera and advanced flight features.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 27,
+    "name": "Apple AirPods Pro",
+    "price": 199.99,
+    "description": "Wireless earbuds with active noise cancellation and superior sound.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 28,
+    "name": "Nikon D750",
+    "price": 999.99,
+    "description": "Full-frame DSLR camera with excellent image quality and versatile features.",
+    "release_year": 2014,
+    "condition": "Good"
+  },
+  {
+    "id": 29,
+    "name": "Razer Blade 15",
+    "price": 1599.99,
+    "description": "High-performance gaming laptop with a sleek design and powerful specs.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 30,
+    "name": "Samsung Galaxy Note 9",
+    "price": 399.99,
+    "description": "Smartphone with a large display and advanced S Pen functionality.",
+    "release_year": 2018,
+    "condition": "Excellent"
+  },
+  {
+    "id": 31,
+    "name": "Bose SoundLink Revolve+",
+    "price": 199.99,
+    "description": "Portable Bluetooth speaker with 360-degree sound and long battery life.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 32,
+    "name": "Apple Mac Mini 2018",
+    "price": 699.99,
+    "description": "Compact desktop computer with powerful performance and versatile connectivity.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 33,
+    "name": "Canon PowerShot G7 X Mark II",
+    "price": 599.99,
+    "description": "Compact camera with excellent image quality and versatile features.",
+    "release_year": 2016,
+    "condition": "Good"
+  },
+  {
+    "id": 34,
+    "name": "Dell Inspiron 15 7000",
+    "price": 799.99,
+    "description": "Versatile laptop with strong performance and a sleek design.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 35,
+    "name": "Sony Bravia X900F",
+    "price": 999.99,
+    "description": "4K HDR TV with excellent picture quality and smart TV features.",
+    "release_year": 2018,
+    "condition": "Excellent"
+  },
+  {
+    "id": 36,
+    "name": "Microsoft Xbox One X",
+    "price": 299.99,
+    "description": "Powerful gaming console with 4K capabilities and enhanced performance.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 37,
+    "name": "Samsung Galaxy Buds+",
+    "price": 99.99,
+    "description": "Truly wireless earbuds with great sound quality and long battery life.",
+    "release_year": 2020,
+    "condition": "Very Good"
+  },
+  {
+    "id": 38,
+    "name": "Apple iMac 27-inch (2019)",
+    "price": 1799.99,
+    "description": "All-in-one desktop computer with a stunning Retina display and powerful specs.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 39,
+    "name": "DJI Spark",
+    "price": 399.99,
+    "description": "Mini drone with advanced flight features and a high-quality camera.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 40,
+    "name": "Google Home Max",
+    "price": 299.99,
+    "description": "Smart speaker with powerful sound and Google Assistant integration.",
+    "release_year": 2017,
+    "condition": "Very Good"
+  },
+  {
+    "id": 41,
+    "name": "Apple iPhone 8",
+    "price": 249.99,
+    "description": "Smartphone with a reliable performance and a great camera.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 42,
+    "name": "Asus ZenBook 14",
+    "price": 699.99,
+    "description": "Compact ultrabook with a sleek design and strong performance.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 43,
+    "name": "Sony RX100 VII",
+    "price": 1099.99,
+    "description": "Compact camera with a large sensor and versatile features.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 44,
+    "name": "Samsung Galaxy Watch Active 2",
+    "price": 179.99,
+    "description": "Smartwatch with advanced health tracking and a sleek design.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 45,
+    "name": "LG Gram 15",
+    "price": 1099.99,
+    "description": "Lightweight and powerful ultrabook with a large display and long battery life.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 46,
+    "name": "Sony Alpha a6400",
+    "price": 899.99,
+    "description": "Mirrorless camera with fast autofocus and excellent image quality.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 47,
+    "name": "Bose SoundLink Mini II",
+    "price": 129.99,
+    "description": "Portable Bluetooth speaker with impressive sound quality and compact design.",
+    "release_year": 2015,
+    "condition": "Good"
+  },
+  {
+    "id": 48,
+    "name": "Dell G5 15",
+    "price": 799.99,
+    "description": "Gaming laptop with strong performance and a sleek design.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 49,
+    "name": "Amazon Fire HD 10",
+    "price": 149.99,
+    "description": "Affordable tablet with a large display and good performance.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 50,
+    "name": "DJI Osmo Pocket",
+    "price": 299.99,
+    "description": "Compact gimbal camera with excellent video stabilization and 4K capabilities.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 51,
+    "name": "Samsung Q90R QLED TV",
+    "price": 1999.99,
+    "description": "4K QLED TV with stunning picture quality and smart TV features.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 52,
+    "name": "GoPro Hero 8 Black",
+    "price": 299.99,
+    "description": "Action camera with advanced stabilization and rugged design.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 53,
+    "name": "Apple iPhone SE (2nd generation)",
+    "price": 299.99,
+    "description": "Compact smartphone with powerful performance and a great camera.",
+    "release_year": 2020,
+    "condition": "Very Good"
+  },
+  {
+    "id": 54,
+    "name": "Lenovo Yoga C940",
+    "price": 1199.99,
+    "description": "2-in-1 laptop with a flexible design and strong performance.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 55,
+    "name": "Canon EOS 90D",
+    "price": 1199.99,
+    "description": "DSLR camera with impressive image quality and advanced features.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 56,
+    "name": "Bose Home Speaker 500",
+    "price": 299.99,
+    "description": "Smart speaker with powerful sound and built-in voice assistants.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 57,
+    "name": "Apple iPad Mini 5",
+    "price": 349.99,
+    "description": "Compact and powerful tablet with a brilliant display and Apple Pencil support.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 58,
+    "name": "Sony WH-CH700N",
+    "price": 99.99,
+    "description": "Affordable noise-cancelling headphones with good sound quality and comfort.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 59,
+    "name": "Dell XPS 15",
+    "price": 1399.99,
+    "description": "High-performance laptop with a stunning 4K display and powerful specs.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 60,
+    "name": "Nikon D850",
+    "price": 2499.99,
+    "description": "High-resolution DSLR camera with excellent image quality and features.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 61,
+    "name": "Jabra Elite 65t",
+    "price": 119.99,
+    "description": "Truly wireless earbuds with great sound quality and comfortable fit.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 62,
+    "name": "Apple Watch Series 3",
+    "price": 199.99,
+    "description": "Smartwatch with fitness tracking and cellular capabilities.",
+    "release_year": 2017,
+    "condition": "Good"
+  },
+  {
+    "id": 63,
+    "name": "Microsoft Surface Go",
+    "price": 399.99,
+    "description": "Affordable and portable 2-in-1 laptop with a versatile design.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 64,
+    "name": "Samsung Galaxy S20",
+    "price": 799.99,
+    "description": "Flagship smartphone with a stunning display and advanced camera system.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 65,
+    "name": "Canon EOS M50",
+    "price": 599.99,
+    "description": "Compact mirrorless camera with excellent image quality and 4K video.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 66,
+    "name": "Apple MacBook Pro 16-inch",
+    "price": 2399.99,
+    "description": "High-performance laptop with a stunning Retina display and powerful specs.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 67,
+    "name": "Sony PlayStation VR",
+    "price": 199.99,
+    "description": "Virtual reality headset with immersive gameplay and wide game library.",
+    "release_year": 2016,
+    "condition": "Excellent"
+  },
+  {
+    "id": 68,
+    "name": "Google Nest Wifi",
+    "price": 269.99,
+    "description": "Mesh Wi-Fi system with strong coverage and integrated Google Assistant.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 69,
+    "name": "Lenovo ThinkPad X1 Carbon",
+    "price": 1299.99,
+    "description": "Ultra-portable laptop with strong performance and a sleek design.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 70,
+    "name": "Bose Frames",
+    "price": 199.99,
+    "description": "Audio sunglasses with built-in speakers and Bluetooth connectivity.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 71,
+    "name": "DJI Phantom 4 Pro",
+    "price": 1499.99,
+    "description": "Advanced drone with high-quality camera and intelligent flight modes.",
+    "release_year": 2016,
+    "condition": "Good"
+  },
+  {
+    "id": 72,
+    "name": "Apple iPhone 11 Pro",
+    "price": 899.99,
+    "description": "Flagship smartphone with a brilliant display and advanced camera system.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 73,
+    "name": "Canon EOS R",
+    "price": 1799.99,
+    "description": "Full-frame mirrorless camera with excellent image quality and features.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 74,
+    "name": "Amazon Echo Show 8",
+    "price": 129.99,
+    "description": "Smart display with an 8-inch screen and integrated Alexa functionality.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 75,
+    "name": "Samsung Galaxy S10+",
+    "price": 399.99,
+    "description": "Smartphone with a stunning display and advanced camera capabilities.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 76,
+    "name": "Sony A7 III",
+    "price": 1999.99,
+    "description": "Full-frame mirrorless camera with excellent image quality and features.",
+    "release_year": 2018,
+    "condition": "Good"
+  },
+  {
+    "id": 77,
+    "name": "Dell Alienware m15",
+    "price": 1699.99,
+    "description": "High-performance gaming laptop with a sleek design and powerful specs.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 78,
+    "name": "Google Pixelbook Go",
+    "price": 649.99,
+    "description": "Lightweight and portable Chromebook with strong performance and a sleek design.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 79,
+    "name": "Apple iPad Air (4th generation)",
+    "price": 599.99,
+    "description": "Powerful tablet with a stunning display and versatile features.",
+    "release_year": 2020,
+    "condition": "Good"
+  },
+  {
+    "id": 80,
+    "name": "Bose QuietComfort Earbuds",
+    "price": 279.99,
+    "description": "Noise-cancelling truly wireless earbuds with superior sound and comfort.",
+    "release_year": 2020,
+    "condition": "Very Good"
+  },
+  {
+    "id": 81,
+    "name": "Microsoft Surface Book 3",
+    "price": 1599.99,
+    "description": "Powerful 2-in-1 laptop with a detachable screen and strong performance.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 82,
+    "name": "Sony PlayStation 5",
+    "price": 499.99,
+    "description": "Next-generation gaming console with stunning graphics and fast load times.",
+    "release_year": 2020,
+    "condition": "Good"
+  },
+  {
+    "id": 83,
+    "name": "Canon EOS 5D Mark IV",
+    "price": 2499.99,
+    "description": "Full-frame DSLR camera with excellent image quality and versatile features.",
+    "release_year": 2016,
+    "condition": "Very Good"
+  },
+  {
+    "id": 84,
+    "name": "Apple AirPods Max",
+    "price": 549.99,
+    "description": "High-end over-ear headphones with active noise cancellation and superior sound.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 85,
+    "name": "Google Pixel 4 XL",
+    "price": 399.99,
+    "description": "Smartphone with a great display and excellent camera quality.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 86,
+    "name": "DJI Ronin-S",
+    "price": 599.99,
+    "description": "Handheld gimbal stabilizer for DSLR and mirrorless cameras with smooth performance.",
+    "release_year": 2018,
+    "condition": "Very Good"
+  },
+  {
+    "id": 87,
+    "name": "Samsung Galaxy Z Fold 2",
+    "price": 1799.99,
+    "description": "Foldable smartphone with a stunning display and advanced features.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 88,
+    "name": "Apple iMac 21.5-inch (2020)",
+    "price": 1299.99,
+    "description": "All-in-one desktop computer with a stunning Retina display and powerful performance.",
+    "release_year": 2020,
+    "condition": "Good"
+  },
+  {
+    "id": 89,
+    "name": "Sony WF-1000XM3",
+    "price": 179.99,
+    "description": "Noise-cancelling truly wireless earbuds with great sound quality and comfort.",
+    "release_year": 2019,
+    "condition": "Very Good"
+  },
+  {
+    "id": 90,
+    "name": "Microsoft Surface Pro X",
+    "price": 999.99,
+    "description": "2-in-1 detachable laptop with a sleek design and versatile performance.",
+    "release_year": 2019,
+    "condition": "Excellent"
+  },
+  {
+    "id": 91,
+    "name": "Canon EOS M200",
+    "price": 549.99,
+    "description": "Compact mirrorless camera with excellent image quality and 4K video.",
+    "release_year": 2019,
+    "condition": "Good"
+  },
+  {
+    "id": 92,
+    "name": "Apple Watch SE",
+    "price": 279.99,
+    "description": "Affordable smartwatch with fitness tracking and essential features.",
+    "release_year": 2020,
+    "condition": "Very Good"
+  },
+  {
+    "id": 93,
+    "name": "Dell XPS 13 2-in-1",
+    "price": 1199.99,
+    "description": "Convertible ultrabook with a stunning display and strong performance.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 94,
+    "name": "Google Pixel 4a 5G",
+    "price": 499.99,
+    "description": "Affordable smartphone with 5G connectivity and excellent camera.",
+    "release_year": 2020,
+    "condition": "Good"
+  },
+  {
+    "id": 95,
+    "name": "Samsung Galaxy Tab S7",
+    "price": 649.99,
+    "description": "High-performance tablet with a large display and S Pen support.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 96,
+    "name": "Sony WH-1000XM4",
+    "price": 349.99,
+    "description": "Noise-canceling over-ear headphones with superior sound quality.",
+    "release_year": 2020,
+    "condition": "Very Good"
+  },
+  {
+    "id": 97,
+    "name": "Amazon Echo Dot (4th Gen)",
+    "price": 49.99,
+    "description": "Compact smart speaker with Alexa voice assistant.",
+    "release_year": 2020,
+    "condition": "Good"
+  },
+  {
+    "id": 98,
+    "name": "Apple MacBook Air (M1, 2020)",
+    "price": 999.99,
+    "description": "Lightweight laptop with Apple's M1 chip for exceptional performance.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  },
+  {
+    "id": 99,
+    "name": "Fitbit Charge 4",
+    "price": 149.99,
+    "description": "Fitness tracker with built-in GPS and heart rate monitoring.",
+    "release_year": 2020,
+    "condition": "Very Good"
+  },
+  {
+    "id": 100,
+    "name": "Microsoft Surface Pro 7",
+    "price": 749.99,
+    "description": "Versatile 2-in-1 laptop with a detachable keyboard and touchscreen.",
+    "release_year": 2020,
+    "condition": "Excellent"
+  }
+]
