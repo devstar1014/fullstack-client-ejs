@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <div class="login">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <br>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <br>
+    <%- include('partials/status.ejs') %>
+    <br>
+    <%- include('partials/auth') %>
+  </body>
+</html>

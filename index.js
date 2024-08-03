@@ -3,11 +3,13 @@ if (process.env.NODE_env !== "production") {
 }
 
 const express = require("express");
-const app = express();
 const session = require("express-session");
-const passport = require("passport");
-const port = process.env.PORT || 3000;
-global.DEBUG = process.env.DEBUG || false;
+const methodOverride = require("method-override");
+
+const app = express();
+const port = parseInt(process.env.PORT) || 3000;
+global.DEBUG = process.env.DEBUG === "true" || false;
+console.log("DEBUG:", DEBUG);
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -25,9 +27,15 @@ app.listen(port, () => {
 });
 
 app.get("/", async (request, response) => {
-  response.render("index");
+  response.render("index", { status: request.session.status });
   return;
 });
+
+const loginRouter = require("./routes/login");
+app.use("/login", loginRouter);
+
+const sessionRouter = require("./routes/session");
+app.use("/test", sessionRouter);
 
 app.use((request, response) => {
   response.status(404).send("404 - Page not found");
