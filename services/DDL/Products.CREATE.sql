@@ -7,6 +7,4 @@ CREATE TABLE IF NOT EXISTS Products (
     description TEXT CHECK (LENGTH(description) >= 15) NOT NULL,
     release_year VARCHAR(4) NOT NULL,
     condition VARCHAR(50) NOT NULL,
-    user_id INT,
-    CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
