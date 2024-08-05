@@ -1,0 +1,22 @@
+<html>
+  <%- include('partials/header') %>
+  <%- include('partials/nav') %>
+  <body>
+    <div class="register">
+      <h1>Registration</h1>
+      <%- include('partials/status.ejs') %>
+      <form action="/login/new" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </body>
+</html>

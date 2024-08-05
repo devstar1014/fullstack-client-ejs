@@ -1,4 +1,13 @@
-<nav>
-    <a href = "/search">Search</a>
-    <a href = "/">Home</a>
-</nav>
+<div>
+  <% if (user) { %>
+    <%- include('homeBtn') %>
+    <%- include('testBtn') %>
+    <%- include('logoutBtn') %>
+  <% } else { %>
+    <%- include('homeBtn') %>
+    <%- include('loginBtn') %>
+    <%- include('registerBtn') %>
+    <%- include('testBtn') %>
+  <% } %>
+</div>
+
