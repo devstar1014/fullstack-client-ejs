@@ -1,7 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
-const UsersDAL = require("../services/p.Users.dal.js");
+const UsersDAL = require("../services/PG/p.Users.dal.js");
 
 passport.use(
   new LocalStrategy(

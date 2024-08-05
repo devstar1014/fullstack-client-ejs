@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const router = express.Router();
 const { checkNotAuthenticated } = require("../config/passport.config.js");
-const UsersDAL = require("../services/p.Users.dal.js");
+const UsersDAL = require("../services/PG/p.Users.dal.js");
 
 router.use(express.static("public"));
 

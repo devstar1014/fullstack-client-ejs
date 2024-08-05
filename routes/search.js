@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { searchProducts } = require("../services/p.fulltext.dal");
+const { searchProducts } = require("../services/PG/p.fulltext.dal");
 
 router.get("/", async (req, res) => {
   const query = req.query.q;
