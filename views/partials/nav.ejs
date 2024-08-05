@@ -1,0 +1,12 @@
+<div>
+  <% if (user) { %>
+    <%- include('homeBtn') %>
+    <%- include('testBtn') %>
+    <%- include('logoutBtn') %>
+  <% } else { %>
+    <%- include('homeBtn') %>
+    <%- include('loginBtn') %>
+    <%- include('registerBtn') %>
+    <%- include('testBtn') %>
+  <% } %>
+</div>
