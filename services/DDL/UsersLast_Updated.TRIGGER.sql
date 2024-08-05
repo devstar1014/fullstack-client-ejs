@@ -1,0 +1,11 @@
+CREATE OR REPLACE FUNCTION update_last_updated()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.last_updated = CURRENT_TIMESTAMP;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+CREATE TRIGGER update_last_updated
+BEFORE UPDATE ON Users
+FOR EACH ROW
+EXECUTE FUNCTION update_last_updated();
