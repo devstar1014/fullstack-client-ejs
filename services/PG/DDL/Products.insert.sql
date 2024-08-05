@@ -1,4 +1,4 @@
-INSERT INTO Products (name, price, description, release_year, condition) VALUES
+INSERT INTO Products (name, price, description, release_date, condition) VALUES
 ('Samsung Galaxy S10', 299.99, 'A powerful smartphone with a stunning display and advanced camera capabilities.', 2019, 'Good'),
 ('Apple MacBook Air 2017', 599.99, 'Lightweight and portable laptop with a sleek design and reliable performance.', 2017, 'Very Good'),
 ('Sony WH-1000XM3 Headphones', 199.99, 'Noise-cancelling over-ear headphones with superior sound quality and comfort.', 2018, 'Excellent'),
