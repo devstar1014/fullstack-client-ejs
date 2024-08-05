@@ -1,19 +1,17 @@
 const express = require("express");
+const passport = require("passport");
 const router = express.Router();
+const { checkAuthenticated } = require("../config/passport.config.js");
 
 router.use(express.static("public"));
 
-router.get("/", async (request, response) => {
-  if (request.session.user) {
-    response.render("session", {
-      status: "Logged in as " + request.session.user.user_name,
-    });
-    return;
-  } else {
-    request.session.status = "You must be logged in to view this page";
-    response.redirect("/");
-    return;
-  }
+router.get("/", checkAuthenticated, async (request, response) => {
+  request.session.status = "You are logged in as " + request.user.user_name;
+  response.render("session", {
+    status: request.session.status,
+    user: request.user,
+  });
+  return;
 });
 
 module.exports = router;

@@ -54,8 +54,9 @@ const createUser = async (user_name, email_address, password) => {
     if (error.code === "23505") {
       console.error("User already exists");
       return null;
+    } else {
+      console.error("Error creating user:", error);
     }
-    console.error("Error creating user:", error);
   }
 };
 
