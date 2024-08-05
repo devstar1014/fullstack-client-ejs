@@ -13,8 +13,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 global.DEBUG = process.env.DEBUG || false;
 
+
 // Connect to MongoDB
 connectDB();
+
+const searchRouter = require("./routes/search");
+
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -26,6 +30,7 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use("/search", searchRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
