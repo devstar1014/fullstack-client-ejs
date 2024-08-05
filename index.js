@@ -11,8 +11,8 @@ const {
   checkAuthenticated,
   checkNotAuthenticated,
 } = require("./config/passport.config");
-const connectDB = require("./services/M.db");
-const Product = require("./services/M.products");
+const connectDB = require("./services/Mongo/M.db");
+const Product = require("./services/Mongo/M.products");
 
 // Variables
 const port = parseInt(process.env.PORT) || 3000;
