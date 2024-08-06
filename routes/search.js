@@ -44,8 +44,8 @@ router.get("/", async (req, res) => {
     // Combines the results from both databases
     let products = [...pgProducts, ...mongoProducts];
 
-    // Sort products by price, lowest to highest
-    products.sort((a, b) => a.price - b.price);
+    // Sort products alphabetically by name
+    products.sort((a, b) => a.name.localeCompare(b.name));
 
     res.render("search", { products, query });
   } catch (error) {
