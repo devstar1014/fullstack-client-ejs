@@ -24,7 +24,10 @@ router.get("/", async (req, res) => {
     mongoProducts.forEach(product => product.source = 'Mongo');
 
     // Combine results
-    const products = [...pgProducts, ...mongoProducts];
+    let products = [...pgProducts, ...mongoProducts];
+
+    // Sort products alphabetically by name
+    products.sort((a, b) => a.name.localeCompare(b.name));
 
     res.render("search", { products, query });
   } catch (error) {
@@ -36,6 +39,7 @@ router.get("/", async (req, res) => {
 // New route to handle individual product pages
 router.get("/product/:id", async (req, res) => {
   const productId = req.params.id;
+  const query = req.query.q || '';
 
   try {
     // Try to find the product in MongoDB first
@@ -56,11 +60,13 @@ router.get("/product/:id", async (req, res) => {
       return res.status(404).send("Product not found");
     }
 
-    res.render("product", { product });
+    res.render("product", { product, query });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
+
+
 
 module.exports = router;
