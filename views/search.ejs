@@ -1,6 +1,5 @@
 <html>
 <%- include('partials/searchHeader') %>
-
 <body>
   <p>Please type in below a few short words for what you looking for.</p>
   <p>Good keywords to use;</p>
@@ -19,9 +18,9 @@
     <% if (products.length > 0) { %>
       <% products.forEach(product => { %>
         <li>
-          <h2><%= product.name %></h2>
+          <h2><a href="/search/product/<%= product.id %>"><%= product.name %> (<%= product.source %>)</a></h2>
           <p><%= product.description %></p>
-          <p>Price: $<%= product.price %></p>
+          <p>Condition: <%= product.condition %></p>
         </li>
       <% }) %>
     <% } else { %>
