@@ -15,7 +15,8 @@
     "passport-local": "^1.0.0",
     "pg": "^8.12.0",
     "util": "^0.12.5",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "winston": "^3.13.1"
   },
   "name": "jsfinalsprint",
   "description": "Final Sprint for Fullstack JS - Used electronics search engine",
