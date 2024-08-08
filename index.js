@@ -14,6 +14,9 @@ const {
 const connectDB = require("./services/Mongo/M.db");
 const Product = require("./services/Mongo/M.products");
 const logger = require("./utils/logger");
+const checkAdmin = require("./middleware/CheckAdmin");
+const adminRouter = require("./routes/admin");
+
 
 // Variables
 const port = parseInt(process.env.PORT) || 3000;
@@ -71,6 +74,9 @@ app.use("/test", sessionRouter);
 
 const searchRouter = require("./routes/search");
 app.use("/search", searchRouter);
+
+//Admin route
+app.use("/admin", /*checkAdmin, */ adminRouter);
 
 // Route to fetch products from MongoDB
 app.get("/products", checkAuthenticated, async (req, res) => {
