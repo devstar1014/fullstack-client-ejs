@@ -13,6 +13,7 @@ const {
 } = require("./config/passport.config");
 const connectDB = require("./services/Mongo/M.db");
 const Product = require("./services/Mongo/M.products");
+const logger = require("./utils/logger");
 
 // Variables
 const port = parseInt(process.env.PORT) || 3000;
@@ -23,6 +24,15 @@ require("./config/passport.config");
 
 // Connect to MongoDB
 connectDB();
+
+// Log server start
+logger.info('Server started successfully');
+
+if (!process.env.SESSION_SECRET) {
+  console.error("SESSION_SECRET is not defined!");
+  process.exit(1); // Exit if the secret is not set
+}
+
 
 // Set up the app
 const app = express();

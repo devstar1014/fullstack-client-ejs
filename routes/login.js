@@ -23,27 +23,18 @@ router.get("/", checkNotAuthenticated, async (request, response) => {
 router.post(
   "/",
   checkNotAuthenticated,
-  (req, res, next) => {
-    const { username } = req.body;
-
-    // Log the login attempt
-    logger.info(`Login attempt for user: ${username}`);
-    logToMongo('info', `Login attempt for user: ${username}`);
-    logToPostgres('info', `Login attempt for user: ${username}`);
-
-    next();
-  },
   passport.authenticate("local", {
-    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
   }),
   (req, res) => {
-    // This function only runs on successful login
-    const { username } = req.body;
+    // Access username from req.user after authentication
+    const username = req.user.username; // Access the authenticated user
     logger.info(`User logged in: ${username}`);
     logToMongo('info', `User logged in: ${username}`);
     logToPostgres('info', `User logged in: ${username}`);
+
+    res.redirect("/");
   }
 );
 
@@ -84,13 +75,14 @@ router.post("/new", checkNotAuthenticated, async (request, response) => {
 });
 
 router.delete("/exit", async (request, response, next) => {
+  const username = request.user.username; // Get username before logout
   request.logout((error) => {
     if (error) return next(error);
 
     // Log logout
-    logger.info(`User logged out: ${request.user.username}`);
-    logToMongo('info', `User logged out: ${request.user.username}`);
-    logToPostgres('info', `User logged out: ${request.user.username}`);
+    logger.info(`User logged out: ${username}`);
+    logToMongo('info', `User logged out: ${username}`);
+    logToPostgres('info', `User logged out: ${username}`);
 
     request.session.status = "Logged out";
     response.redirect("/login");
@@ -98,4 +90,5 @@ router.delete("/exit", async (request, response, next) => {
 });
 
 module.exports = router;
+
 
