@@ -5,21 +5,35 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
-const connectDB = require("./database/M.database");
-const Product = require("./database/models/M.products");
-const User = require("./database/models/M.users");
+const flash = require("express-flash");
+const methodOverride = require("method-override");
+const {
+  checkAuthenticated,
+  checkNotAuthenticated,
+} = require("./config/passport.config");
+const connectDB = require("./services/Mongo/M.db");
+const Product = require("./services/Mongo/M.products");
+const logger = require("./utils/logger");
 
-const app = express();
-const port = process.env.PORT || 3000;
-global.DEBUG = process.env.DEBUG || false;
+// Variables
+const port = parseInt(process.env.PORT) || 3000;
+global.DEBUG = process.env.DEBUG === "true" || false;
 
 
 // Connect to MongoDB
 connectDB();
 
-const searchRouter = require("./routes/search");
+// Log server start
+logger.info('Server started successfully');
+
+if (!process.env.SESSION_SECRET) {
+  console.error("SESSION_SECRET is not defined!");
+  process.exit(1); // Exit if the secret is not set
+}
 
 
+// Set up the app
+const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
