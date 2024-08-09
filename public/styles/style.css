@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
+* {
+  font-family: "Electrolize", sans-serif;
+}
+
+body {
+  background-color: #2e2d2d;
+  color: #0094ff;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav {
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0094ff;
+  padding: 10px 20px;
+  font-weight: bolder;
+}
+
+.nav form {
+  margin: 0;
+}
+
+.button {
+  background-color: #0094ff;
+  color: #2e2d2d;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.searchBar form {
+  margin: 0;
+  height: 100%;
+}
+
+.searchPrice {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  border: solid 2px #0094ff;
+  color: #0094ff;
+  border-radius: 16px;
+  background-color: #2e2d2d;
+}
+
+input:focus {
+  background-color: #0094ff;
+  border: solid 2px #0094ff;
+  color: #2e2d2d;
+}
+
+.searchButton {
+  background-color: #0094ff;
+  color: #2e2d2d;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.register label {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}

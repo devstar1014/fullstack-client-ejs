@@ -1,19 +1,26 @@
 <html>
   <%- include('partials/header') %>
-  <%- include('partials/nav') %>
   <body>
     <div class="register">
       <h1>Registration</h1>
+      <p>Thanks for choosing for Best Kind Electronics!</p>
+      <p>You will need an account to search the database.</p>
       <%- include('partials/status.ejs') %>
       <form action="/login/new" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
+        <div class="regSeperator">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" required autocomplete="off">
+        </div>
         <br>
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" required>
+        <div class="regSeperator">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email" required autocomplete="off">
+        </div>
         <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+        <div class="regSeperator">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required autocomplete="off">
+        </div>
         <br>
         <input type="submit" value="Register">
       </form>
