@@ -26,6 +26,7 @@ connectDB();
 
 // Set up the app
 const app = express();
+app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -56,11 +57,11 @@ app.get("/", async (request, response) => {
 const loginRouter = require("./routes/login");
 app.use("/login", loginRouter);
 
-const sessionRouter = require("./routes/session");
-app.use("/test", sessionRouter);
-
 const searchRouter = require("./routes/search");
 app.use("/search", searchRouter);
+
+// const logRouter = require("./routes/log");
+// app.use("/log", logRouter);
 
 // Route to fetch products from MongoDB
 app.get("/products", checkAuthenticated, async (req, res) => {

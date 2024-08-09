@@ -54,7 +54,7 @@ router.delete("/exit", async (request, response, next) => {
   request.logout((error) => {
     if (error) return next(error);
     request.session.status = "Logged out";
-    response.redirect("/login");
+    response.redirect("/");
   });
 });
 

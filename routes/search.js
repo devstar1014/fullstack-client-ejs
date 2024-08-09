@@ -1,12 +1,16 @@
 const express = require("express");
 const router = express.Router();
+
+const { searchProducts } = require("../services/PG/p.fulltext.dal");
+const { checkAuthenticated } = require("../config/passport.config.js");
 const { searchProducts: searchPGProducts } = require("../services/PG/p.fulltext.dal");
 const Product = require("../services/Mongo/M.products");
 
-router.get("/", async (req, res) => {
+
+router.get("/", checkAuthenticated, async (req, res) => {
   const query = req.query.q;
   if (!query) {
-    return res.render("search", { products: [], query: "" });
+    return res.render("search", { products: [], query: "", user: req.user });
   }
 
   try {
