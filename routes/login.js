@@ -19,10 +19,19 @@ router.post(
   "/",
   checkNotAuthenticated,
   passport.authenticate("local", {
-    successRedirect: "/",
     failureRedirect: "/login",
+    failureMessage: true,
     failureFlash: true,
-  })
+  }),
+  (request, response) => {
+    if (DEBUG) console.log("Login request", request.body);
+    if (DEBUG) console.log("Login user object", request.user);
+    request.session.status = "Welcome, " + request.user.user_name + "!";
+    response.render("index", {
+      status: request.session.status,
+      user: request.user,
+    });
+  }
 );
 
 router.get("/new", checkNotAuthenticated, async (request, response) => {
@@ -41,7 +50,7 @@ router.post("/new", checkNotAuthenticated, async (request, response) => {
       request.body.email,
       hashedPassword
     );
-    request.session.status = "User created";
+    request.session.status = "Account created, please log in";
     response.redirect("/login");
   } catch (error) {
     console.error("Error creating user:", error);

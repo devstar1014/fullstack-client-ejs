@@ -47,8 +47,11 @@ app.listen(port, () => {
 });
 
 app.get("/", async (request, response) => {
+  if (DEBUG) console.log(request.session.user);
+  const status = request.session.status;
+  request.session.status = "";
   response.render("index", {
-    status: request.session.status,
+    status: status,
     user: request.user,
   });
   return;
@@ -74,5 +77,9 @@ app.get("/products", checkAuthenticated, async (req, res) => {
 });
 
 app.use((request, response) => {
-  response.status(404).send("404 - Page not found");
+  response.status(404).render("404", {
+    status: "404 Page Not Found",
+    user: request.user,
+  });
+  return;
 });
