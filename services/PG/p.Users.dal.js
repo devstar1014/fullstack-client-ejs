@@ -1,5 +1,6 @@
+const { ErrorLogoMongo } = require("../Mongo/M.errorLog.js");
 const DAL = require("./p.db.js");
-
+const AUTH_ERROR = require("../ErrorTypes.js").AUTH_ERROR;
 const getUsers = async () => {
   const SQL = `SELECT * FROM Users`;
   try {
@@ -48,14 +49,15 @@ const createUser = async (user_name, email_address, password) => {
   const SQL = `INSERT INTO Users (user_name, email_address, password) VALUES ($1, $2, $3) RETURNING *`;
   try {
     const results = await DAL.query(SQL, [user_name, email_address, password]);
-    // console.log("results ==>", results);
     if (DEBUG) console.table(results.rows[0]);
     return results.rows[0];
   } catch (error) {
     if (error.code === "23505") {
+      ErrorLogoMongo(AUTH_ERROR, "User already exists");
       console.error("User already exists");
-      return null;
+      throw error;
     } else {
+      ErrorLogoMongo(AUTH_ERROR, "Error creating user");
       console.error("Error creating user:", error);
     }
   }

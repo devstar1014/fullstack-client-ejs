@@ -4,12 +4,13 @@ const passport = require("passport");
 const router = express.Router();
 const { checkNotAuthenticated } = require("../config/passport.config.js");
 const UsersDAL = require("../services/PG/p.Users.dal.js");
-
+const { AUTH_ERROR } = require("../services/ErrorTypes.js");
 // Import logging utilities
 const logger = require("../utils/logger");
-const logToMongo = require("../services/Mongo/M.log");
+const logToMongo = require("../services/Mongo/M.log").logToMongo;
 const logToPostgres = require("../services/PG/p.log");
-const ErrorLogoMongo = require("../services/Mongo/M.errorLog.js");
+const ErrorLogoMongo =
+  require("../services/Mongo/M.errorLog.js").ErrorLogoMongo;
 
 router.use(express.static("public"));
 
@@ -87,7 +88,7 @@ router.post("/new", checkNotAuthenticated, async (request, response) => {
 });
 
 router.delete("/exit", async (request, response, next) => {
-  const username = request.user.username; // Get username before logout
+  const username = request.user.user_name; // Get username before logout
   request.logout((error) => {
     if (error) return next(error);
 

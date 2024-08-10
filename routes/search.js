@@ -12,7 +12,7 @@ const {
   searchProducts: searchPGProducts,
 } = require("../services/PG/p.fulltext.dal");
 const Product = require("../services/Mongo/M.products");
-const SearchWordToMongo = require("../services/Mongo/M.searchLog.js");
+const SearchWordToMongo = require("../services/Mongo/M.searchLog.js").SearchWordToMongo;
 
 router.get("/", checkAuthenticated, async (req, res) => {
   if (DEBUG) console.log("User is authenticated : ", req.user);

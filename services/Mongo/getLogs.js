@@ -1,7 +1,17 @@
-const Log = require('./M.log'); 
-
+const Log = require("./M.log");
+const getLogs = require("./M.log").getLogs;
+const getErrorLogs = require("./M.errorLog").getErrorLogs;
+const getSearchLogs = require("./M.searchLog").getSearchLogs;
 async function getMongoLogs() {
-  return await Log.find().sort({ timestamp: -1 }).limit(100); // Fetch the latest 100 logs
+  return await getLogs();
 }
 
-module.exports = getMongoLogs;
+async function getSearchLog() {
+  return await getSearchLogs();
+}
+
+async function getErrorLog() {
+  return await getErrorLogs();
+}
+
+module.exports = { getMongoLogs, getSearchLog, getErrorLog };

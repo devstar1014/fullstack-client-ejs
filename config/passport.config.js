@@ -2,7 +2,8 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 const UsersDAL = require("../services/PG/p.Users.dal.js");
-
+const ErrorLogoMongo = require("../services/Mongo/M.errorLog.js").ErrorLogoMongo;
+const AUTH_ERROR = require('../services/ErrorTypes.js').AUTH_ERROR
 passport.use(
   new LocalStrategy(
     { usernameField: "email" },
@@ -15,6 +16,10 @@ passport.use(
         if (await bcrypt.compare(password, user.password)) {
           return done(null, user);
         } else {
+          ErrorLogoMongo(
+            AUTH_ERROR,
+            `Email: ${email} \n Invalid email or password.`
+          );
           return done(null, false, { message: "Invalid email or password." });
         }
       } catch (error) {

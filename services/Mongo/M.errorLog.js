@@ -15,4 +15,7 @@ function ErrorLogoMongo(errorType, errorMessage) {
     .catch((err) => console.error("Failed to log to MongoDB", err));
 }
 
-module.exports = ErrorLogoMongo;
+async function getErrorLogs() {
+  return await ErrorLog.find().sort({ timestamp: -1 }).limit(100);
+}
+module.exports = { ErrorLogoMongo, getErrorLogs };

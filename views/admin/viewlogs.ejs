@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Logs</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .log-container { margin: 20px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+         background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Logs</h1>
+
+    <div class="log-container">
+        <h2>Error Logs</h2>
+        <!-- <pre><%= errorLogs %></pre> -->
+        <table class="table">
+            <thead>
+
+                <th>No</th>
+                <th>Date</th>
+                <th>Error Type</th>
+                <th>Error Message</th>
+            </thead>
+            <tbody>
+                <% errorLogs.forEach((log, index )=> { %>
+                    <tr>
+                        <td>
+                            [<%= index + 1 %>]
+                        </td>
+                        <td>
+                            [<%= log.timestamp %>]
+                        </td>
+                        <td>
+                            <%= log.errorType %>
+                        </td>
+                        <td>
+                             <%= log.errorMessage %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="log-container">
+        <h2>Search Logs</h2>
+        <table class="table">
+            <thead>
+
+                <th>No</th>
+                <th>Date</th>
+                <th>User</th>
+                <th>Search Word</th>
+            </thead>
+            <tbody>
+                <% sendsearchLogs.forEach((log, index) => { %>
+                    <tr>
+                        <td>
+                            [<%= index + 1 %>]
+                        </td>
+                        <td>
+                            [<%= log.timestamp %>]
+                        </td>
+                        <td>
+                            <%= log.user %>
+                        </td>
+                        <td>
+                            <%= log.searchWord %>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    
+    </div>
+</body>
+</html>

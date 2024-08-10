@@ -16,8 +16,6 @@ const Product = require("./services/Mongo/M.products");
 const logger = require("./utils/logger");
 const checkAdmin = require("./middleware/CheckAdmin");
 
-
-
 // Variables
 const port = parseInt(process.env.PORT) || 3000;
 global.DEBUG = process.env.DEBUG === "true" || false;
@@ -29,13 +27,12 @@ require("./config/passport.config");
 connectDB();
 
 // Log server start
-logger.info('Server started successfully');
+logger.info("Server started successfully");
 
 if (!process.env.SESSION_SECRET) {
   console.error("SESSION_SECRET is not defined!");
   process.exit(1); // Exit if the secret is not set
 }
-
 
 // Set up the app
 const app = express();
@@ -56,7 +53,7 @@ app.use(passport.session());
 app.use(methodOverride("_method"));
 
 app.get("/", async (request, response) => {
-  if (DEBUG) console.log(request.session.user);
+  if (DEBUG) console.log("request.session.user=>", request.session.user);
   const status = request.session.status;
   request.session.status = "";
   response.render("index", {
@@ -72,13 +69,11 @@ app.use("/login", loginRouter);
 const searchRouter = require("./routes/search");
 app.use("/search", searchRouter);
 
-
 // const logRouter = require("./routes/log");
 // app.use("/log", logRouter);
 //Admin route
 const adminRouter = require("./routes/admin");
 app.use("/admin", /*checkAdmin, */ adminRouter);
-
 
 // Route to fetch products from MongoDB
 app.get("/products", checkAuthenticated, async (req, res) => {
@@ -97,7 +92,6 @@ app.use((request, response) => {
   });
   return;
 });
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
