@@ -25,16 +25,23 @@ router.post(
   checkNotAuthenticated,
   passport.authenticate("local", {
     failureRedirect: "/login",
-    failureFlash: true
+
+    failureMessage: true,
+    failureFlash: true,
   }),
-  (req, res) => {
-    // Access username from req.user after authentication
-    const username = req.user.username; // Access the authenticated user
+  (request, response) => {
+    if (DEBUG) console.log("Login request", request.body);
+    if (DEBUG) console.log("Login user object", request.user);
+    request.session.status = "Welcome, " + request.user.user_name + "!";
+        const username = req.user.username; // Access the authenticated user
     logger.info(`User logged in: ${username}`);
     logToMongo('info', `User logged in: ${username}`);
     logToPostgres('info', `User logged in: ${username}`);
+    response.render("index", {
+      status: request.session.status,
+      user: request.user,
+    });
 
-    res.redirect("/");
   }
 );
 
@@ -54,13 +61,15 @@ router.post("/new", checkNotAuthenticated, async (request, response) => {
       request.body.email,
       hashedPassword
     );
-
     // Log successful user registration
     logger.info(`User registered: ${request.body.username}`);
     logToMongo('info', `User registered: ${request.body.username}`);
     logToPostgres('info', `User registered: ${request.body.username}`);
 
+    request.session.status = "Account created, please log in";
+
     request.session.status = "User created";
+
     response.redirect("/login");
   } catch (error) {
     // Log error during user registration
@@ -85,7 +94,7 @@ router.delete("/exit", async (request, response, next) => {
     logToPostgres('info', `User logged out: ${username}`);
 
     request.session.status = "Logged out";
-    response.redirect("/login");
+    response.redirect("/");
   });
 });
 

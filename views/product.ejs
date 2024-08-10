@@ -1,0 +1,14 @@
+<html>
+  <%- include('partials/Header') %>
+  <body>
+    <div class="productFlex">
+      <h1><%= product.name %></h1>
+      <p class="productFlexPrice">Price: <%= product.price %></p>
+      <p>Condition: <%= product.condition %></p>
+      <p>Year of Release: <%= product.release_year %></p>
+      <p class="productFlexDescription"><%= product.description %></p>
+      
+    </div>
+  </body>
+  <%- include('partials/Footer') %>
+</html>

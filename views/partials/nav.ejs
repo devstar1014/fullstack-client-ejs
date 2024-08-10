@@ -1,13 +1,23 @@
-<div>
+<div class="nav">
+  <a href="/">
+    <button class="button">Home</button>
+  </a>
+  <a href="/search">
+    <button class="button">Search</button>
+  </a>
   <% if (user) { %>
-    <%- include('homeBtn') %>
-    <%- include('testBtn') %>
-    <%- include('logoutBtn') %>
+    <div>
+      <form action="/login/exit?_method=DELETE" method="POST">
+        <button class="button" type="submit">Logout</button>
+      </form>
+    </div>  
   <% } else { %>
-    <%- include('homeBtn') %>
-    <%- include('loginBtn') %>
-    <%- include('registerBtn') %>
-    <%- include('testBtn') %>
+    <a href="/login/new">
+      <button class="button">Register</button>
+    </a>
+    <a href="/login">
+      <button class="button">Login</button>
+    </a>
   <% } %>
 </div>
 

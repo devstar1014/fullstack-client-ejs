@@ -39,6 +39,7 @@ if (!process.env.SESSION_SECRET) {
 
 // Set up the app
 const app = express();
+app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -59,8 +60,11 @@ app.listen(port, () => {
 });
 
 app.get("/", async (request, response) => {
+  if (DEBUG) console.log(request.session.user);
+  const status = request.session.status;
+  request.session.status = "";
   response.render("index", {
-    status: request.session.status,
+    status: status,
     user: request.user,
   });
   return;
@@ -69,14 +73,15 @@ app.get("/", async (request, response) => {
 const loginRouter = require("./routes/login");
 app.use("/login", loginRouter);
 
-const sessionRouter = require("./routes/session");
-app.use("/test", sessionRouter);
-
 const searchRouter = require("./routes/search");
 app.use("/search", searchRouter);
 
+
+// const logRouter = require("./routes/log");
+// app.use("/log", logRouter);
 //Admin route
 app.use("/admin", /*checkAdmin, */ adminRouter);
+
 
 // Route to fetch products from MongoDB
 app.get("/products", checkAuthenticated, async (req, res) => {
@@ -89,5 +94,9 @@ app.get("/products", checkAuthenticated, async (req, res) => {
 });
 
 app.use((request, response) => {
-  response.status(404).send("404 - Page not found");
+  response.status(404).render("404", {
+    status: "404 Page Not Found",
+    user: request.user,
+  });
+  return;
 });

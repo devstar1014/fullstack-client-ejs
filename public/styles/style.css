@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+
+* {
+  font-family: "Electrolize", sans-serif;
+}
+
+body {
+  background-color: #2e2d2d;
+  color: #0094ff;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0094ff;
+  padding: 10px 20px;
+  font-weight: bolder;
+}
+
+.nav form {
+  margin: 0;
+}
+
+.button {
+  background-color: #0094ff;
+  color: #2e2d2d;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+status {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.searchBar form {
+  margin: 0;
+  height: 100%;
+}
+
+.searchPrice {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  border: solid 2px #0094ff;
+  color: #0094ff;
+  border-radius: 16px;
+  background-color: #2e2d2d;
+}
+
+input:focus {
+  background-color: #0094ff;
+  border: solid 2px #0094ff;
+  color: #2e2d2d;
+}
+
+.searchButton {
+  background-color: #0094ff;
+  color: #2e2d2d;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.register label {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.productLink {
+  text-decoration: none;
+  color: #00b9b9;
+}
+
+.productPrice {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.productItem {
+  padding-bottom: 10px;
+}
+
+.productFlex {
+  align-self: center;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.productFlexPrice {
+  width: 50%;
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.productFlexDescription {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+footer {
+  padding: 3px;
+  color: #0094ff;
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.regSeperator input {
+  font-weight: bold;
+}
+
+.searchInput {
+  font-weight: bold;
+}
+
+.notFound {
+  text-align: center;
+}

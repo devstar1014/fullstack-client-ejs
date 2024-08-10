@@ -1,32 +1,36 @@
 <html>
-<%- include('partials/searchHeader') %>
-<%- include('partials/nav') %> 
-<body>
-  <p>Please type in below a few short words for what you looking for.</p>
-  <p>Good keywords to use;</p>
-  <ul>
-    <li>Tablet...</li>
-    <li>Phone...</li>
-    <li>Computer...</li>
-    <li>Camera...</li>
-  </ul>
-  <h2>Search Results for "<%= query %>"</h2>
-  <form action="/search" method="get">
-    <input type="text" name="q" value="<%= query %>">
-    <button type="submit">Search</button>
-  </form>
-  <ul>
-    <% if (products.length > 0) { %>
-      <% products.forEach(product => { %>
-        <li>
-          <h2><%= product.name %></h2>
-          <p><%= product.description %></p>
-          <p>Price: $<%= product.price %></p>
-        </li>
-      <% }) %>
-    <% } else { %>
-      <li>No products found</li>
-    <% } %>
-  </ul>
-</body>
+  <%- include('partials/Header') %>
+  <body>
+    <p>Please type in below a few short words for what you looking for.</p>
+    <p>Good keywords to use;</p>
+    <ul>
+      <li>Tablet...</li>
+      <li>Phone...</li>
+      <li>Computer...</li>
+      <li>Camera...</li>
+    </ul>
+    <div class="searchBar">
+      <h2>Search Results for "<%= query %>"</h2>
+      <form action="/search" method="get">
+        <input class="searchInput" type="text" name="q" value="<%= query %>" autocomplete="off">
+        <button class="searchButton" type="submit">Search</button>
+      </form>
+    </div>
+    <ul>
+      <% if (products.length > 0) { %>
+        <% products.forEach(product => { %>
+          <li>
+            <div class="productItem">
+              <h2><a class="productLink" href="/search/product/<%= product.source %>/<%= product.id %>"><%= product.name %> (<%= product.source %>)</a></h2>
+              <p class="productPrice">$<%= product.price %> - Condition: <%= product.condition %></p>
+              <p><%= product.description %></p>
+            </div>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li>No products found</li>
+      <% } %>
+    </ul>
+  </body>
+  <%- include('partials/Footer') %>
 </html>
