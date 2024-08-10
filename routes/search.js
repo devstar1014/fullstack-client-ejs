@@ -1,13 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const { searchProducts } = require("../services/PG/p.fulltext.dal");
+const {
+  searchProducts,
+  getProductById,
+} = require("../services/PG/p.fulltext.dal");
 const { checkAuthenticated } = require("../config/passport.config.js");
-const { searchProducts: searchPGProducts } = require("../services/PG/p.fulltext.dal");
+const {
+  searchProducts: searchPGProducts,
+} = require("../services/PG/p.fulltext.dal");
 const Product = require("../services/Mongo/M.products");
 
-
 router.get("/", checkAuthenticated, async (req, res) => {
+  if (DEBUG) console.log("User is authenticated : ", req.user);
   const query = req.query.q;
   if (!query) {
     return res.render("search", { products: [], query: "", user: req.user });
@@ -16,16 +21,16 @@ router.get("/", checkAuthenticated, async (req, res) => {
   try {
     // Search in PostgreSQL
     const pgProducts = await searchPGProducts(query);
-    pgProducts.forEach(product => product.source = 'PostgreSQL');
+    pgProducts.forEach((product) => (product.source = "PostgreSQL"));
 
     // Search in MongoDB
     const mongoProducts = await Product.find({
       $or: [
-        { name: new RegExp(query, 'i') },
-        { description: new RegExp(query, 'i') }
-      ]
+        { name: new RegExp(query, "i") },
+        { description: new RegExp(query, "i") },
+      ],
     }).lean();
-    mongoProducts.forEach(product => product.source = 'Mongo');
+    mongoProducts.forEach((product) => (product.source = "Mongo"));
 
     // Combine results
     let products = [...pgProducts, ...mongoProducts];
@@ -33,7 +38,8 @@ router.get("/", checkAuthenticated, async (req, res) => {
     // Sort products alphabetically by name
     products.sort((a, b) => a.name.localeCompare(b.name));
 
-    res.render("search", { products, query });
+    res.render("search", { products, query, user: req.user });
+    return;
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
@@ -41,36 +47,29 @@ router.get("/", checkAuthenticated, async (req, res) => {
 });
 
 // New route to handle individual product pages
-router.get("/product/:id", async (req, res) => {
+router.get("/product/:source/:id", checkAuthenticated, async (req, res) => {
   const productId = req.params.id;
-  const query = req.query.q || '';
-
+  const source = req.params.source;
+  const query = req.query.q || "";
+  if (DEBUG) console.log(source);
   try {
-    // Try to find the product in MongoDB first
-    let product = await Product.findOne({ id: productId });
-
-    if (!product) {
-      // If not found in MongoDB, try to find it in PostgreSQL
-      const { getProductById } = require("../services/PG/p.fulltext.dal");
+    let product;
+    if (source === "Mongo") {
+      product = await Product.findOne({ id: productId });
+    } else if (source === "PostgreSQL") {
       product = await getProductById(productId);
-      if (product) {
-        product.source = 'PostgreSQL';
-      }
-    } else {
-      product.source = 'Mongo';
     }
-
+    if (DEBUG) console.log(product);
     if (!product) {
       return res.status(404).send("Product not found");
     }
 
-    res.render("product", { product, query });
+    res.render("product", { product: product, query: query, user: req.user });
+    return;
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
-
-
 
 module.exports = router;

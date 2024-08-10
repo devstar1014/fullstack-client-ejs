@@ -15,7 +15,7 @@ passport.use(
         if (await bcrypt.compare(password, user.password)) {
           return done(null, user);
         } else {
-          return done(null, false, { message: "Invalid email of password." });
+          return done(null, false, { message: "Invalid email or password." });
         }
       } catch (error) {
         return done(error);
@@ -35,6 +35,7 @@ passport.deserializeUser(async (userId, done) => {
 
 const checkAuthenticated = (request, response, next) => {
   if (request.isAuthenticated()) {
+    console.log("User is authenticated : ", request.user);
     return next();
   }
   response.redirect("/login");
