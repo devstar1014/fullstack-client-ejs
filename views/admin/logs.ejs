@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Logs</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .log-container { margin: 20px; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Admin Logs</h1>
+
+    <div class="log-container">
+        <h2>File Logs</h2>
+        <pre><%= fileLogs %></pre>
+    </div>
+
+    <div class="log-container">
+        <h2>MongoDB Logs</h2>
+        <ul>
+            <% mongoLogs.forEach(log => { %>
+                <li>[<%= log.timestamp %>] <%= log.level %>: <%= log.message %></li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>
