@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const logger = require('../utils/logger'); // Imported logger
-const { searchProducts } = require("../services/PG/p.fulltext.dal"); // PostgreSQL search
-const { searchMongoProducts } = require("../services/Mongo/mongoSearch.dal"); // MongoDB search
+const logger = require("../utils/logger"); // Imported logger
 
 const {
   searchProducts,
@@ -14,13 +12,13 @@ const {
   searchProducts: searchPGProducts,
 } = require("../services/PG/p.fulltext.dal");
 const Product = require("../services/Mongo/M.products");
+const SearchWordToMongo = require("../services/Mongo/M.searchLog.js");
 
 router.get("/", checkAuthenticated, async (req, res) => {
   if (DEBUG) console.log("User is authenticated : ", req.user);
   const query = req.query.q;
   logger.info(`Keyword search: ${query}`); // Logging the search query
   if (!query) {
-
     return res.render("search", { products: [], query: "", user: req.user });
   }
 
@@ -44,6 +42,8 @@ router.get("/", checkAuthenticated, async (req, res) => {
     // Sort products alphabetically by name
     products.sort((a, b) => a.name.localeCompare(b.name));
 
+    // Log to MongoDB
+    SearchWordToMongo(req.user.user_id, query);
     res.render("search", { products, query, user: req.user });
     return;
   } catch (error) {
@@ -72,20 +72,10 @@ router.get("/product/:source/:id", checkAuthenticated, async (req, res) => {
 
     res.render("product", { product: product, query: query, user: req.user });
     return;
-
-    return res.render("search", { pgResults: [], mongoResults: [], query: "" });
-  }
-
-  try {
-    const pgResults = await searchProducts(query); // Search PostgreSQL
-    const mongoResults = await searchMongoProducts(query); // Search MongoDB
-    res.render("search", { pgResults, mongoResults, query });
-
   } catch (error) {
-    logger.error(`Error occurred during search: ${error.message}`);
+    console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
 
 module.exports = router;
-

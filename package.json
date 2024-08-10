@@ -23,7 +23,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "dev" : "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/GarrettSmithyNL/FinalSprint-FullStack/issues"
   },
-  "homepage": "https://github.com/GarrettSmithyNL/FinalSprint-FullStack#readme"
+  "homepage": "https://github.com/GarrettSmithyNL/FinalSprint-FullStack#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }

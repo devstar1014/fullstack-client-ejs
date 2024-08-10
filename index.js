@@ -15,7 +15,7 @@ const connectDB = require("./services/Mongo/M.db");
 const Product = require("./services/Mongo/M.products");
 const logger = require("./utils/logger");
 const checkAdmin = require("./middleware/CheckAdmin");
-const adminRouter = require("./routes/admin");
+
 
 
 // Variables
@@ -55,10 +55,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
 app.get("/", async (request, response) => {
   if (DEBUG) console.log(request.session.user);
   const status = request.session.status;
@@ -80,6 +76,7 @@ app.use("/search", searchRouter);
 // const logRouter = require("./routes/log");
 // app.use("/log", logRouter);
 //Admin route
+const adminRouter = require("./routes/admin");
 app.use("/admin", /*checkAdmin, */ adminRouter);
 
 
@@ -99,4 +96,9 @@ app.use((request, response) => {
     user: request.user,
   });
   return;
+});
+
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

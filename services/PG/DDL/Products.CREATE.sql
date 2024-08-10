@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS Products (
     price DECIMAL(10, 2) NOT NULL,
     description TEXT CHECK (LENGTH(description) >= 15) NOT NULL,
     release_year VARCHAR(4) NOT NULL,
-    condition VARCHAR(50) NOT NULL,
+    condition VARCHAR(50) NOT NULL
 );

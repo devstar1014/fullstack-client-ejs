@@ -48,6 +48,7 @@ const createUser = async (user_name, email_address, password) => {
   const SQL = `INSERT INTO Users (user_name, email_address, password) VALUES ($1, $2, $3) RETURNING *`;
   try {
     const results = await DAL.query(SQL, [user_name, email_address, password]);
+    // console.log("results ==>", results);
     if (DEBUG) console.table(results.rows[0]);
     return results.rows[0];
   } catch (error) {
