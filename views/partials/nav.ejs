@@ -6,9 +6,11 @@
     <button class="button">Search</button>
   </a>
   <% if (user) { %>
-    <a href="/admin/view-logs">
-      <button class="button">View Logs</button>
-    </a>
+    <% if (user.role == "admin") { %>
+      <a href="/admin/view-logs">
+        <button class="button">View Logs</button>
+      </a>
+    <% } %>
     <div>
       <form action="/login/exit?_method=DELETE" method="POST">
         <button class="button" type="submit">Logout</button>
