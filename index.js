@@ -31,7 +31,7 @@ logger.info("Server started successfully");
 
 if (!process.env.SESSION_SECRET) {
   console.error("SESSION_SECRET is not defined!");
-  process.exit(1); // Exit if the secret is not set
+  process.exit(1); // Exit if the secret is not set.
 }
 
 // Set up the app
