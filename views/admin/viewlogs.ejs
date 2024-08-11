@@ -24,11 +24,24 @@
         tr:nth-child(even) {
          background-color: #dddddd;
         }
+
+        .btn {
+            background-color: yellowgreen;
+            padding: 5px 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), 4px 4px 5px rgba(0, 0, 0, 0.5);
+            font-size: 1.5rem;
+            border: none;
+        }
     </style>
 </head>
 <body>
     <h1>Admin Logs</h1>
 
+    <div class="log-container">
+        <button class="btn" href="\" id="backbutton">
+            Back
+        </button>
+    </div>
     <div class="log-container">
         <h2>Error Logs</h2>
         <!-- <pre><%= errorLogs %></pre> -->
@@ -92,5 +105,10 @@
         </table>
     
     </div>
+    <script>
+        document.getElementById('backbutton').addEventListener('click', function() {
+            window.history.back();
+        })
+    </script>
 </body>
 </html>

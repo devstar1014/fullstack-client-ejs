@@ -39,7 +39,6 @@ router.get("/logs", checkAuthenticated, checkAdmin, async (req, res) => {
 router.get("/view-logs", checkAuthenticated, checkAdmin, async (req, res) => {
   // Use both checkAuthenticated and checkAdmin
   try {
-
     const errorLogs = await getErrorLog();
     console.log("Error Logs:", errorLogs); // Debugging step
 
@@ -47,21 +46,6 @@ router.get("/view-logs", checkAuthenticated, checkAdmin, async (req, res) => {
     console.log("Search Logs:", searchLogs); // Debugging step
 
     let sendsearchLogs = [];
-
-    // for (const log of searchLogs) {
-    //   let searchlog = new Promise((reslove, reject) => {
-    //     let user = getUserById(log.user);
-    //     if (user) {
-    //       reslove(
-    //         sendsearchLogs.push({
-    //           user: user.user_name,
-    //           searchword: log.searchWord,
-    //           timestamp: log.timestamp,
-    //         })
-    //       );
-    //     }
-    //   });
-    // }
 
     for (const log of searchLogs) {
       const data = await getUserById(log.user);
@@ -71,7 +55,6 @@ router.get("/view-logs", checkAuthenticated, checkAdmin, async (req, res) => {
         timestamp: log.timestamp,
       });
     }
-
 
     res.render("admin/viewlogs", {
       errorLogs,
