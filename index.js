@@ -26,7 +26,7 @@ require("./config/passport.config");
 // Connect to MongoDB
 connectDB();
 
-// Log server start
+// Log Server Start
 logger.info("Server started successfully");
 
 if (!process.env.SESSION_SECRET) {
